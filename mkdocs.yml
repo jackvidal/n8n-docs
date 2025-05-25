@@ -91,6 +91,7 @@ extra_javascript:
 watch:
   - _glossary
   - _snippets
+
 markdown_extensions:
   # used for https://squidfunk.github.io/mkdocs-material/reference/tooltips/
   - abbr
@@ -98,18 +99,14 @@ markdown_extensions:
   # attr_list is required for several other features. Always enable.
   - attr_list
   # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#automatic-previews
-  - material.extensions.preview:
-      # This is currently not documented (issue here https://github.com/squidfunk/mkdocs-material/issues/8001)
-      # It is mentioned here though: https://github.com/squidfunk/mkdocs-material/issues/6704#issuecomment-1986840660
-      # We use it to process these two settings independently. Otherwise, previews would only work
-      # on links in source pages _to_ target pages
-      configurations:
-        - sources:
-            include:
-              - release-notes.md
-        - targets:
-            include:
-              - glossary.md
+  # - material.extensions.preview: # השארתי את זה כהערה בינתיים, זה היה אחד ממקורות השגיאה הקודמים
+      # configurations:
+      #   - sources:
+      #       include:
+      #         - release-notes.md
+      #   - targets:
+      #       include:
+      #         - glossary.md
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#markdown-in-html
   - md_in_html
   - meta
@@ -125,41 +122,34 @@ markdown_extensions:
         - details
   - pymdownx.details
   # https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/
-#  - pymdownx.emoji:
- #     emoji_index: !!python/name:material.extensions.emoji.twemoji
-  #    emoji_generator:
-        !!python/name:material.extensions.emoji.to_svg
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#highlight
-#  - pymdownx.highlight:
-#      linenums: true
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#inlinehilite
-#  - pymdownx.inlinehilite
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#keys
-#  - pymdownx.keys
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#snippets
-#  - pymdownx.snippets:
-#      auto_append:
-        - _glossary/main.md
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#superfences Superfences is required for several other features. Always enable.
-#  - pymdownx.superfences:
-      # https://squidfunk.github.io/mkdocs-material/reference/diagrams/
+  # - pymdownx.emoji: # הערתי את כל הבלוק הזה, כולל ההגדרות הפנימיות שלו
+  #     emoji_index: !!python/name:material.extensions.emoji.twemoji
+  #     emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  
+  # הערתי החוצה את ההרחבות הבעייתיות. השארתי את אלו שהן בדרך כלל בטוחות או הכרחיות.
+  # - pymdownx.highlight:
+  #     linenums: true
+  # - pymdownx.inlinehilite
+  # - pymdownx.keys
+  # - pymdownx.snippets:
+  #     auto_append:
+  #       - _glossary/main.md
+  - pymdownx.superfences: # Superfences לרוב חשוב להרבה פיצ'רים, כולל דיאגרמות
       custom_fences:
         - name: mermaid
           class: mermaid
-          format:
-            !!python/name:pymdownx.superfences.fence_code_format
-      # https://facelessuser.github.io/pymdown-extensions/extensions/superfences/#preserve-tabs
+          format: !!python/name:pymdownx.superfences.fence_code_format
       preserve_tabs: true
-#  - pymdownx.tasklist:
-      custom_checkbox: true
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#tabbed
-#  - pymdownx.tabbed:
-#      alternate_style: true
-#  - sane_lists
+  # - pymdownx.tasklist:
+  #     custom_checkbox: true
+  # - pymdownx.tabbed:
+  #     alternate_style: true
+  # - sane_lists
   - tables
   # https://www.mkdocs.org/user-guide/writing-your-docs/#linking-to-pages
   - toc:
       permalink: "#"
+
 plugins:
   # You need the info plugin for bug reports to Material theme
   # But DO NOT ENABLE IT NORMALLY
