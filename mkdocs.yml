@@ -125,23 +125,23 @@ markdown_extensions:
         - details
   - pymdownx.details
   # https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator:
+#  - pymdownx.emoji:
+ #     emoji_index: !!python/name:material.extensions.emoji.twemoji
+  #    emoji_generator:
         !!python/name:material.extensions.emoji.to_svg
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#highlight
-  - pymdownx.highlight:
-      linenums: true
+#  - pymdownx.highlight:
+#      linenums: true
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#inlinehilite
-  - pymdownx.inlinehilite
+#  - pymdownx.inlinehilite
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#keys
-  - pymdownx.keys
+#  - pymdownx.keys
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#snippets
-  - pymdownx.snippets:
-      auto_append:
+#  - pymdownx.snippets:
+#      auto_append:
         - _glossary/main.md
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#superfences Superfences is required for several other features. Always enable.
-  - pymdownx.superfences:
+#  - pymdownx.superfences:
       # https://squidfunk.github.io/mkdocs-material/reference/diagrams/
       custom_fences:
         - name: mermaid
@@ -150,12 +150,12 @@ markdown_extensions:
             !!python/name:pymdownx.superfences.fence_code_format
       # https://facelessuser.github.io/pymdown-extensions/extensions/superfences/#preserve-tabs
       preserve_tabs: true
-  - pymdownx.tasklist:
+#  - pymdownx.tasklist:
       custom_checkbox: true
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#tabbed
-  - pymdownx.tabbed:
-      alternate_style: true
-  - sane_lists
+#  - pymdownx.tabbed:
+#      alternate_style: true
+#  - sane_lists
   - tables
   # https://www.mkdocs.org/user-guide/writing-your-docs/#linking-to-pages
   - toc:
